@@ -20,6 +20,11 @@ OpenTofu configurations for the `ambient-code-platform` GCP project.
 State is stored in a GCS bucket (`ambient-code-platform-tfstate`). You must
 have access to this bucket to run `tofu init`.
 
+The bucket should have:
+- **Uniform bucket-level access** enabled (no per-object ACLs)
+- **Object versioning** enabled (allows state recovery)
+- **Restricted IAM** — only project administrators and the CI identity
+
 ## Usage
 
 ```
