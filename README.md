@@ -1,4 +1,4 @@
-# ambient-code-terraform
+# ambient-code-opentofu
 
 OpenTofu configurations for the `ambient-code-platform` GCP project.
 

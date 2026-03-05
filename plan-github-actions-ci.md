@@ -35,4 +35,4 @@ The CI job also needs access to the GCS state bucket.
 
 - Use `google-github-actions/auth` action for workload identity auth
 - Pin OpenTofu version in the workflow
-- Use `hashicorp/setup-terraform` or install OpenTofu directly
+- Install OpenTofu directly in the workflow
