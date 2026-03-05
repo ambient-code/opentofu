@@ -25,8 +25,11 @@ The CI job also needs access to the GCS state bucket.
 - The workload identity federation resources from this repo must be applied
 - The GCS state bucket must exist
 - Grant the CI identity permission to read/write the GCS state bucket
-- Grant the CI identity `roles/iam.workloadIdentityPoolAdmin` and
-  `roles/iam.securityAdmin` so it can manage WIF and IAM resources
+- Grant the CI identity `roles/iam.workloadIdentityPoolAdmin` to manage WIF
+  resources
+- Grant the CI identity `roles/resourcemanager.projectIamAdmin` with an IAM
+  Condition limiting it to specific roles (e.g. `roles/aiplatform.user`) so
+  it can manage IAM bindings without full security admin access
 
 ## Implementation notes
 
