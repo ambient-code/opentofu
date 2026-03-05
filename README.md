@@ -28,8 +28,7 @@ A GitHub Actions workflow runs on every push:
 - **plan** — runs `tofu plan` on non-main branches
 - **apply** — runs `tofu apply -auto-approve` on main
 
-The workflow authenticates to GCP via Direct Workload Identity Federation
-(no service account keys).
+The workflow authenticates to GCP via Direct Workload Identity Federation.
 
 ## Local usage
 
