@@ -1,6 +1,6 @@
 # ambient-code-opentofu
 
-OpenTofu configurations for the `ambient-code-platform` GCP project.
+[OpenTofu](https://opentofu.org/) configurations for the `ambient-code-platform` GCP project.
 
 ## What this manages
 
@@ -9,12 +9,6 @@ OpenTofu configurations for the `ambient-code-platform` GCP project.
 - **GCP API enablement** - Vertex AI and supporting APIs
 - **IAM bindings** - `roles/aiplatform.user` for CI workloads
 - **CI/CD** - GitHub Actions workflow to validate, plan, and apply changes
-
-## Prerequisites
-
-- [OpenTofu](https://opentofu.org/) installed
-- GCP credentials: `gcloud auth application-default login`
-- Access to the `ambient-code-platform` GCP project
 
 ## State backend
 
