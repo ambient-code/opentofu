@@ -34,7 +34,7 @@ resource "google_iam_workload_identity_pool_provider" "github_provider" {
   workload_identity_pool_provider_id = "ambient-code-github-actions"
   display_name                       = "ambient-code GitHub Actions"
 
-  attribute_condition = "assertion.repository_owner == 'ambient-code'"
+  attribute_condition = "assertion.repository in ['ambient-code/platform', 'ambient-code/terraform']"
 
   attribute_mapping = {
     "google.subject"             = "assertion.sub"
