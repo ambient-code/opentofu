@@ -1,0 +1,11 @@
+# OpenTofu/Terraform directories
+.terraform
+.tofu
+
+# Lock files
+.terraform.lock.hcl
+.tofu.lock.hcl
+
+# State files
+*.tfstate
+*.tfstate.backup
