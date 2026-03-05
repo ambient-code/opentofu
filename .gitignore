@@ -2,8 +2,7 @@
 .terraform
 .tofu
 
-# Lock files
-.terraform.lock.hcl
+# Lock files (tofu only; .terraform.lock.hcl is committed for provider integrity)
 .tofu.lock.hcl
 
 # State files
