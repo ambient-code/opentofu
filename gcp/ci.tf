@@ -8,8 +8,15 @@ locals {
 # Read and write OpenTofu state in the GCS backend bucket.
 resource "google_storage_bucket_iam_member" "ci_state_bucket" {
   bucket = "ambient-code-platform-tfstate"
-  role   = "roles/storage.objectAdmin"
+  role   = "roles/storage.admin"
   member = local.ci_principal
+}
+
+# Read the status of enabled GCP APIs during plan/apply.
+resource "google_project_iam_member" "ci_service_usage_viewer" {
+  project = var.project_id
+  role    = "roles/serviceusage.serviceUsageViewer"
+  member  = local.ci_principal
 }
 
 # Manage Workload Identity Pool and Provider resources.
