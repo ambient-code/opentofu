@@ -8,6 +8,7 @@ OpenTofu configurations for the `ambient-code-platform` GCP project.
   authenticate to GCP without service account keys
 - **GCP API enablement** - Vertex AI and supporting APIs
 - **IAM bindings** - `roles/aiplatform.user` for CI workloads
+- **CI/CD** - GitHub Actions workflow to validate, plan, and apply changes
 
 ## Prerequisites
 
@@ -25,7 +26,18 @@ The bucket should have:
 - **Object versioning** enabled (allows state recovery)
 - **Restricted IAM** — only project administrators and the CI identity
 
-## Usage
+## CI/CD
+
+A GitHub Actions workflow runs on every push:
+
+- **validate** — runs `tofu validate` on all branches
+- **plan** — runs `tofu plan` on non-main branches
+- **apply** — runs `tofu apply -auto-approve` on main
+
+The workflow authenticates to GCP via Direct Workload Identity Federation
+(no service account keys).
+
+## Local usage
 
 ```
 cd gcp
