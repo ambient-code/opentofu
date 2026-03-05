@@ -2,8 +2,7 @@ name: OpenTofu
 
 on:
   push:
-    # TODO: remove ci-iam-grants after verifying the workflow works end-to-end
-    branches: [main, ci-iam-grants]
+    branches: [main]
   pull_request:
 
 permissions:
@@ -70,8 +69,7 @@ jobs:
             });
 
   apply:
-    # TODO: restore to main-only after verifying the workflow works end-to-end
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/ci-iam-grants'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
